@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   {{{styles}}}
 </head>
-<body id="kss-node--single">
+<body id="kss-node" class="kss-node--single">
 
-<nav class="kss-top-nav">
+<nav class="kss-top-nav kss-wrapper">
   <ul class="kss-top-nav__menu">
     <li class="kss-top-nav__menu-item">
       <a class="kss-top-nav__menu-link" href="./">
@@ -37,7 +37,7 @@ The sections variable is an array containing a single section.
 {{#each sections}}
   <div id="kssref-{{referenceURI}}">
 
-    <div class="kss-style">
+    <div class="kss-style kss-wrapper">
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
           <span class="kss-title__ref">
@@ -53,6 +53,50 @@ The sections variable is an array containing a single section.
           {{header}}
         </a>
       </h1>
+
+      <ul class="kss-toolbar">
+        <li><span class="kss-toolbar__button">
+          <span class="kss-toolbar__description">Focus on this section</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 64 64" style="fill:#000">
+            <path d="M64 0h-26l10 10-12 12 6 6 12-12 10 10z"/>
+            <path d="M64 64v-26l-10 10-12-12-6 6 12 12-10 10z"/>
+            <path d="M0 64h26l-10-10 12-12-6-6-12 12-10-10z"/>
+            <path d="M0 0v26l10-10 12 12 6-6-12-12 10-10z"/>
+          </svg>
+        </span></li>
+        <li><a class="kss-toolbar__button" href="single-{{referenceURI}}.html#kssref-{{referenceURI}}">
+          <span class="kss-toolbar__description">Open this section on a new page</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 64 64" style="fill:#000">
+            <path d="M12 4v48h48v-48h-48zM56 48h-40v-40h40v40zM8 56v-42l-4-4v50h50l-4-4h-42z"/>
+            <path d="M22 16l10 10-12 12 6 6 12-12 10 10v-26z"/>
+          </svg>
+        </a></li>
+        <li><span class="kss-toolbar__button">
+          <span class="kss-toolbar__description">Hide/show example guides</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 64 64" style="fill:#000">
+            <path d="M20,5l9,0l0,5l-9,0l0,-5Z"/>
+            <path d="M35,5l9,0l0,5l-9,0l0,-5Z"/>
+            <path d="M5,21l5,0l0,9l-5,0l0,-9Z"/>
+            <path d="M5,35l5,0l0,9l-5,0l0,-9Z"/>
+            <path d="M54,21l5,0l0,9l-5,0l0,-9Z"/>
+            <path d="M54,35l5,0l0,9l-5,0l0,-9Z"/>
+            <path d="M20,54l9,0l0,5l-9,0l0,-5Z"/>
+            <path d="M35,54l9,0l0,5l-9,0l0,-5Z"/>
+            <path d="M59,54l5,0l0,5l-5,0l0,5l-5,0l0,-5l-5,0l0,-5l5,0l0,-5l5,0l0,5Z"/>
+            <path d="M10,54l5,0l0,5l-5,0l0,5l-5,0l0,-5l-5,0l0,-5l5,0l0,-5l5,0l0,5Z"/>
+            <path d="M59,5l5,0l0,5l-5,0l0,5l-5,0l0,-5l-5,0l0,-5l5,0l0,-5l5,0l0,5Z"/>
+            <path d="M10,5l5,0l0,5l-5,0l0,5l-5,0l0,-5l-5,0l0,-5l5,0l0,-5l5,0l0,5Z"/>
+          </svg>
+        </span></li>
+        <li><span class="kss-toolbar__button">
+          <span class="kss-toolbar__description">Hide/show markup code</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 80 64" style="fill:#000;margin:0 -2px">
+            <path d="M52 46l6 6 20-20-20-20-6 6 14 14z"/>
+            <path d="M28 18l-6-6-20 20 20 20 6-6-14-14z"/>
+            <path d="M43.831 9.407l4.342 1.184-11.999 44.002-4.342-1.184 11.999-44.002z"/>
+          </svg>
+        </span></li>
+      </ul>
 
       {{#if description}}
         <div class="kss-description">
@@ -84,38 +128,44 @@ The sections variable is an array containing a single section.
     </div>
 
     {{#if markup}}
-      <div class="kss-modifier__heading kss-style">
-        Example{{#if modifiers}}s{{/if}}
-      </div>
-      {{#if modifiers}}
+      <div class="kss-wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example{{#if modifiers}}s{{/if}}
+        </div>
+        {{#if modifiers}}
         <div class="kss-modifier__default-name kss-style">
           Default styling
         </div>
-      {{/if}}
+        {{/if}}
+      </div>
       <div class="kss-modifier__example">
         {{{markup}}}
       </div>
       {{#each modifiers}}
-        <div class="kss-modifier__name kss-style">
-          {{name}}
-        </div>
-        <div class="kss-modifier__description kss-style">
-          {{{description}}}
+        <div class="kss-wrapper">
+          <div class="kss-modifier__name kss-style">
+            {{name}}
+          </div>
+          <div class="kss-modifier__description kss-style">
+            {{{description}}}
+          </div>
         </div>
         <div class="kss-modifier__example">
           {{{markup ../this modifier_class=className}}}
         </div>
       {{/each}}
 
-    <div class="kss-markup kss-style">
-      <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-    </div>
+      <div class="kss-wrapper">
+        <div class="kss-markup kss-style">
+          <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+        </div>
 
-    {{#if sourceFile.name}}
-    <div class="kss-source kss-style">
-      Source: <code>{{sourceFile.name}}</code>, line {{sourceFile.line}}
-    </div>
-    {{/if}}
+        {{#if sourceFile.name}}
+          <div class="kss-source kss-style">
+            Source: <code>{{sourceFile.name}}</code>, line {{sourceFile.line}}
+          </div>
+        {{/if}}
+      </div>
     {{/if}}
 
   </div>
