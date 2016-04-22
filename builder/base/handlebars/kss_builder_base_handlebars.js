@@ -179,6 +179,20 @@ class KssBuilderBaseHandlebars extends KssBuilderBase {
       })
     );
 
+    // Optionally compile the single.hbs Handlebars template.
+    if (typeof this.templates.single === 'undefined') {
+      buildTasks.push(
+        fs.readFileAsync(path.resolve(this.options.builder, 'single.hbs'), 'utf8').then(content => {
+          this.templates.single = this.Handlebars.compile(content);
+          return Promise.resolve();
+        }).catch(() => {
+          // If the single.hbs template cannot be read, ignore it.
+          delete this.templates.single;
+          return Promise.resolve();
+        })
+      );
+    }
+
     let sections = this.styleGuide.sections();
 
     if (this.options.verbose && this.styleGuide.meta.files) {
@@ -292,6 +306,13 @@ class KssBuilderBaseHandlebars extends KssBuilderBase {
       sectionRoots.forEach(rootReference => {
         buildPageTasks.push(this.buildPage('section', rootReference, this.styleGuide.sections(rootReference + '.*')));
       });
+
+      // For each section, build a page which only has a single section on it.
+      if (this.templates.single) {
+        sections.forEach(section => {
+          buildPageTasks.push(this.buildPage('single', section.reference(), [section]));
+        });
+      }
 
       return Promise.all(buildPageTasks);
     }).then(() => {
