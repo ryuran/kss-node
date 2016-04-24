@@ -25,64 +25,64 @@
   <nav class="kss-nav">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
-        <a href="./">
+        <a class="kss-nav__menu-link" href="./">
           <span class="kss-nav__ref">0</span
           ><span class="kss-nav__name">Overview</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-spec.html">
+        <a class="kss-nav__menu-link" href="section-spec.html">
           <span class="kss-nav__ref">1</span><span class="kss-nav__name">KSS Spec</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-javascript-api.html">
+        <a class="kss-nav__menu-link" href="section-javascript-api.html">
           <span class="kss-nav__ref">2</span><span class="kss-nav__name">JavaScript API</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-demo.html">
+        <a class="kss-nav__menu-link" href="section-demo.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Demo</span>
         </a>
         <ul class="kss-nav__menu-child">
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-mixins">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-mixins">
               <span class="kss-nav__ref ">3.1</span
               ><span class="kss-nav__name">Mixins</span>
             </a>
           </li>
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-mixins-button-colorize">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-mixins-button-colorize">
               <span class="kss-nav__ref kss-nav__ref-child">3.1.1</span
               ><span class="kss-nav__name">.button-colorize(@color)</span>
             </a>
           </li>
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-mixins-example">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-mixins-example">
               <span class="kss-nav__ref kss-nav__ref-child">3.1.2</span
               ><span class="kss-nav__name">.colors(@bg, @color)</span>
             </a>
           </li>
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-components">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-components">
               <span class="kss-nav__ref ">3.2</span
               ><span class="kss-nav__name">Components</span>
             </a>
           </li>
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-components-buttons">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-components-buttons">
               <span class="kss-nav__ref kss-nav__ref-child">3.2.1</span
               ><span class="kss-nav__name">Buttons</span>
             </a>
           </li>
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-forms">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-forms">
               <span class="kss-nav__ref ">3.3</span
               ><span class="kss-nav__name">Forms</span>
             </a>
           </li>
           <li class="kss-nav__menu-item">
-            <a href="section-demo.html#kssref-demo-forms-text">
+            <a class="kss-nav__menu-link" href="section-demo.html#kssref-demo-forms-text">
               <span class="kss-nav__ref kss-nav__ref-child">3.3.1</span
               ><span class="kss-nav__name">Text Input</span>
             </a>
@@ -109,13 +109,13 @@
         </a>
       </h1>
 
-
       <div class="kss-description">
         <p>The source files for this demo can be found in the
 <a href="https://github.com/kss-node/kss-node/tree/master/demo">demo folder</a> on
 GitHub.</p>
 
       </div>
+
     </div>
 
 
@@ -135,11 +135,11 @@ GitHub.</p>
         </a>
       </h2>
 
-
       <div class="kss-description">
         <p>LESS mixins used in this demo.</p>
 
       </div>
+
     </div>
 
 
@@ -159,16 +159,21 @@ GitHub.</p>
         </a>
       </h3>
 
-      <ul class="kss-parameters">
-        <li class="kss-parameters__item">
-          <code class="kss-parameters__name">@color</code>
-          <div class="kss-parameters__description">Button color.</div>
-        </li>
-      </ul>
-
       <div class="kss-description">
         <p>Creates button styling with the specified color.</p>
 
+      </div>
+
+      <div class="kss-parameters__title">Parameters:</div>
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <div class="kss-parameters__name"><code>@color</code></div>
+            <div class="kss-parameters__no-default"></div>
+          <div class="kss-parameters__description">Button color.</div>
+        </li>
+      </ul>
+      <div class="kss-source">
+        Source: <code>components/buttons.less</code>, line 61
       </div>
     </div>
 
@@ -189,20 +194,26 @@ GitHub.</p>
         </a>
       </h3>
 
-      <ul class="kss-parameters">
-        <li class="kss-parameters__item">
-          <code class="kss-parameters__name">@bg</code>
-          <div class="kss-parameters__description">Background color; defaults to <code>#f5f5f5</code>.</div>
-        </li>
-        <li class="kss-parameters__item">
-          <code class="kss-parameters__name">@color</code>
-          <div class="kss-parameters__description">Foreground color; defaults to <code>#900</code>.</div>
-        </li>
-      </ul>
-
       <div class="kss-description">
         <p>Applies foreground and background colors.</p>
 
+      </div>
+
+      <div class="kss-parameters__title">Parameters:</div>
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <div class="kss-parameters__name"><code>@bg</code></div>
+            <div class="kss-parameters__default-value">Defaults to: <code>#f5f5f5</code></div>
+          <div class="kss-parameters__description">Background color.</div>
+        </li>
+        <li class="kss-parameters__item">
+          <div class="kss-parameters__name"><code>@color</code></div>
+            <div class="kss-parameters__default-value">Defaults to: <code>#900</code></div>
+          <div class="kss-parameters__description">Foreground color.</div>
+        </li>
+      </ul>
+      <div class="kss-source">
+        Source: <code>mixins/example.less</code>, line 1
       </div>
     </div>
 
@@ -223,12 +234,12 @@ GitHub.</p>
         </a>
       </h2>
 
-
       <div class="kss-description">
         <p>Reusable components that can be used across the site.
 So far this just includes buttons.</p>
 
       </div>
+
     </div>
 
 
@@ -248,11 +259,11 @@ So far this just includes buttons.</p>
         </a>
       </h3>
 
-
       <div class="kss-description">
         <p>A majority of buttons in the site are built from the same base class.</p>
 
       </div>
+
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -337,6 +348,10 @@ So far this just includes buttons.</p>
 </code></pre>
       </div>
 
+      <div class="kss-source kss-style">
+        Source: <code>components/buttons.less</code>, line 1
+      </div>
+
     </section>
     <section id="kssref-demo-forms" class="kss-section kss-section--depth-2">
 
@@ -353,11 +368,11 @@ So far this just includes buttons.</p>
         </a>
       </h2>
 
-
       <div class="kss-description">
         <p>Covers styles used for forms, such as the <code>&lt;input&gt;</code> and <code>&lt;select&gt;</code> elements.</p>
 
       </div>
+
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -397,6 +412,10 @@ So far this just includes buttons.</p>
 </code></pre>
       </div>
 
+      <div class="kss-source kss-style">
+        Source: <code>styles.less</code>, line 18
+      </div>
+
     </section>
     <section id="kssref-demo-forms-text" class="kss-section kss-section--depth-3">
 
@@ -413,11 +432,11 @@ So far this just includes buttons.</p>
         </a>
       </h3>
 
-
       <div class="kss-description">
         <p>Below are the text-oriented form elements used on the site.</p>
 
       </div>
+
     </div>
 
 
@@ -437,11 +456,11 @@ So far this just includes buttons.</p>
         </a>
       </h4>
 
-
       <div class="kss-description">
         <p>Your standard, everyday text boxes.</p>
 
       </div>
+
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -487,6 +506,10 @@ So far this just includes buttons.</p>
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;[modifier class]&quot; value&#x3D;&quot;Text input&quot;/&gt;</code></pre>
       </div>
 
+      <div class="kss-source kss-style">
+        Source: <code>forms/base.less</code>, line 8
+      </div>
+
     </section>
     <section id="kssref-demo-forms-text-label-pairs" class="kss-section kss-section--depth-4">
 
@@ -503,12 +526,12 @@ So far this just includes buttons.</p>
         </a>
       </h4>
 
-
       <div class="kss-description">
         <p>All labelled text boxes should be included in a wrapper <code>&lt;div&gt;</code> element for
 both layout convenience and specific styling.</p>
 
       </div>
+
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -564,14 +587,23 @@ both layout convenience and specific styling.</p>
   &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;&quot; value&#x3D;&quot;Text input&quot;/&gt;&lt;/div&gt;</code></pre>
       </div>
 
+      <div class="kss-source kss-style">
+        Source: <code>forms/base.less</code>, line 58
+      </div>
+
     </section>
 </article>
 
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
 <script src="kss-assets/prettify.js"></script>
 <script>
   prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
 </script>
 
 
@@ -580,6 +612,6 @@ both layout convenience and specific styling.</p>
     <a href="https://github.com/kss-node/kss-node"><img src="kss-assets/github-fork--black.png" alt="Fork me on GitHub"></a>
   </footer>
 
-<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>

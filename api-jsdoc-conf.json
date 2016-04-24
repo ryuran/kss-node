@@ -2,11 +2,14 @@
   "source": {
     "include": [
       "lib",
-      "generator"
+      "builder"
     ],
     "exclude": [
-      "generator/kss_example_generator.js",
-      "generator/handlebars/template"
+      "builder/base/example",
+      "builder/handlebars/kss-assets",
+      "builder/handlebars/node_modules",
+      "builder/twig/kss-assets",
+      "builder/twig/node_modules"
     ]
   },
   "opts": {
