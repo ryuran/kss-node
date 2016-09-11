@@ -363,8 +363,8 @@ describe('KssBuilderBaseTwig object API', function() {
       expect(this.files['section-1']).to.include('ref:1.A:no-example:\n');
     });
 
-    it('should add modifier_class from the JSON data', function() {
-      expect(this.files['section-1']).to.include('ref:1.C:markup:<div class="one-cee-from-json [modifier class]">');
+    it('should add modifier_class and modifier_attribute from the JSON data', function() {
+      expect(this.files['section-1']).to.include('ref:1.C:markup:<div class="one-cee-from-json [modifier class]" [modifier attribute]>');
     });
 
     it('should add modifier_class from the example JSON data', function() {
